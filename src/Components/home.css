@@ -1,0 +1,31 @@
+.homeContainer {
+  border: 1px solid;
+}
+table {
+  border: 3px solid blue;
+  border-radius: 4px;
+  margin: 10px auto;
+  border-collapse: collapse;
+  width: 80%;
+}
+thead > tr > th {
+  color: teal;
+  font-size: 20px;
+  font-weight: 800;
+  border-bottom: 2px solid #000;
+}
+tbody > tr,
+td,
+th {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  border-top: 1.5px solid #000;
+}
+
+tbody > tr:hover {
+  background-color: rgb(87, 87, 87);
+  color: white;
+  cursor: pointer;
+  transition: all ease 0.5s;
+}
