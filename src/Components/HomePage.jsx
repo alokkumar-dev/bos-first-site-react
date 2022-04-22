@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "./Redux/action";
 import "./home.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const { petData } = useSelector((store) => store.petData);
   const dispatch = useDispatch();
@@ -21,9 +21,16 @@ export const Home = () => {
 
   const handleCostSort = (e)=>{
       const {id,value} = e.target;
-      if(id == 'sortByCost' && value=='high'){
+      if(id == 'sortByCost' && value=='low'){
           petData.sort((a,b)=>a.cost-b.cost);
-          
+            // console.log(petData);
+            dispatch(getPetData);
+      }
+      if(id == 'sortByCost' && value=='high'){
+          petData.sort((a,b)=>b.cost-a.cost);
+            dispatch(getPetData);
+            // console.log(petData);
+
       }
   }
 
@@ -32,8 +39,8 @@ export const Home = () => {
       <div>
         <select name="" id="sortByCost" onChange={handleCostSort}>
           <option value="">--sort by cost--</option>
-          <option value="high">Low to high</option>
-          <option value="low">Low to low</option>
+          <option value="high">high to low</option>
+          <option value="low">low to high</option>
         </select>
       </div>
 
