@@ -14,7 +14,6 @@ export const Navbar = () => {
       >
         <button className="home">
           <Link to="/">{"home"}</Link>
-          {/* Home */}
         </button>
         <button className="create">
           <Link to="/listing/create"> {"Create"}</Link>
